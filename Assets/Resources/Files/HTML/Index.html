@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>Unity Export</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="js/three.js"></script>
+
+		<script>
+			var scene = new THREE.Scene();
+			var renderer = new THREE.WebGLRenderer({antialias: true});
+			var cameraId = null;
+			var camera = null;
+
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			// camera.position.set.z = -5;
+			// Create a red background
+			renderer.setClearColor (0xff0000, 1);
+
+			// load scene (cubes)
+			var loader = new THREE.ObjectLoader();
+			loader.load(
+				// resource URL
+				'scene/scene.json',
+
+				// onLoad callback
+				function ( obj ) {
+					scene.add( obj );
+				},
+
+				// onProgress callback
+				function ( xhr ) {
+					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+				},
+
+				function ( err ) {
+					console.error( 'An error happened' );
+				}
+			);
+			
+			// Load camera
+			var loader2 = new THREE.ObjectLoader();
+			loader2.load(
+				// resource URL
+				'scene/camera.json',
+
+				// onLoad callback
+				function ( obj ) {
+					camera = obj;
+					scene.add(obj);
+
+					updateAspect();
+				},
+
+				// onProgress callback
+				function ( xhr ) {
+					console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+				},
+
+				function ( err ) {
+					console.error( 'An error happened' );
+				}
+			);
+
+			window.addEventListener('resize', ()=> {
+				updateAspect();
+			})
+
+			// Called when we resize the window to make sure the aspec ratio is correct and no scroll bars.
+			var updateAspect = () => {
+					renderer.setSize(window.innerWidth, window.innerHeight);
+					camera.aspect = window.innerWidth / window.innerHeight;
+					camera.updateProjectionMatrix();
+					renderer.render( scene, camera ); // REMINDER: if we have animations put this in animation instead to render every frame
+			}
+
+		</script>
+	</body>
+</html>

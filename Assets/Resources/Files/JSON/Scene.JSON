@@ -1,0 +1,69 @@
+{
+   "metadata": {
+      "version": 4.5,
+      "type": "Object",
+      "generator": "Object3D.toJSON"
+   },
+   "geometries": [
+      {
+         "uuid": "D65AB9D7-FC40-4302-9A08-F8B8431E0D98",
+         "type": "BoxBufferGeometry",
+         "width": 1,
+         "height": 1,
+         "depth": 1,
+         "widthSegments": 1,
+         "heightSegments": 1,
+         "depthSegments": 1
+      },
+      {
+         "uuid": "77D7F38D-931D-4B06-9826-A8E7FC9F041F",
+         "type": "BoxBufferGeometry",
+         "width": 1,
+         "height": 1,
+         "depth": 1,
+         "widthSegments": 1,
+         "heightSegments": 1,
+         "depthSegments": 1
+      }],
+   "materials": [
+      {
+         "uuid": "EBA6E556-0D32-4EC8-8DBB-115870DF6928",
+         "type": "MeshStandardMaterial",
+         "color": 11619918,
+         "roughness": 1,
+         "metalness": 0,
+         "emissive": 0,
+         "depthFunc": 3,
+         "depthTest": true,
+         "depthWrite": true,
+         "stencilWrite": false,
+         "stencilWriteMask": 255,
+         "stencilFunc": 519,
+         "stencilRef": 0,
+         "stencilFuncMask": 255,
+         "stencilFail": 7680,
+         "stencilZFail": 7680,
+         "stencilZPass": 7680
+      },
+      {
+         "uuid": "08760EFC-3BE2-4AFD-93A1-E9E827B90986",
+         "type": "MeshStandardMaterial",
+         "color": 16777215,
+         "roughness": 1,
+         "metalness": 0,
+         "emissive": 0,
+         "depthFunc": 3,
+         "depthTest": true,
+         "depthWrite": true,
+         "stencilWrite": false,
+         "stencilWriteMask": 255,
+         "stencilFunc": 519,
+         "stencilRef": 0,
+         "stencilFuncMask": 255,
+         "stencilFail": 7680,
+         "stencilZFail": 7680,
+         "stencilZPass": 7680
+      }],
+   "object": 
+   [[SceneObjects]]
+}
